@@ -4,6 +4,25 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  /*Background */
+  body {
+    background-image: linear-gradient(-45deg, #337599, #adc8d6, #6620df, rgb(66, 66, 184), #000000 );
+    background-size: 400% 400%;
+    animation: gradient 18s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   
   /* Style the body to be a flex container, centering its content vertically and horizontally */
   body {
@@ -11,7 +30,7 @@
     justify-content: center; /*Makes everything centered*/
     align-items: center;/*Makes everything centered*/
     min-height: 100vh;
-    background: #091921; /* Set background color */
+     /* Set background color */
   }
   
   /* Style the clock container */
