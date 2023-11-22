@@ -16,3 +16,18 @@ setInterval(() => {
   min.style.transform = `translate(-50%,-100%) rotate(${minrotation}deg)`; // defines the CSS transformation for the minute hand (min) in JavaScript.
   sec.style.transform = `translate(-50%,-85%) rotate(${secrotation}deg)`; // defines the CSS transformation for the second hand (sec  ) in JavaScript.
 });
+
+
+
+// Erhalte das aktuelle Datum als String mit zwei Ziffern für Tag und Monat
+const dateString = new Date().toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit' });
+
+// Extrahiere den Tag und den Monat
+const day = dateString.substring(0, 2);
+const month = dateString.substring(3, 5);
+
+// Füge das bearbeitete Datum in das Dokument ein (mit Punkt zwischen Tag und Monat)
+document.querySelector(".clock").insertAdjacentHTML(
+  'beforeend',
+  `<div class="date-display">${day}.${month}</div>`
+);
