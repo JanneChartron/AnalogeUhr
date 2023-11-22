@@ -1,33 +1,41 @@
-const hr = document.querySelector(".hand.hour-hand"); // searches in the HTML element that has the class "hand hour-hand" and assigns it to the variable hr.
-const min = document.querySelector(".hand.min-hand"); // searches in the HTML element that has the class "hand min-hand" and assigns it to the variable min.
-const sec = document.querySelector(".hand.second-hand"); // searches in the HTML element that has the class "hand sec-hand" and assigns it to the variable sec.
+// selects and assigns the element with class "hand hour-hand".
+const hr = document.querySelector(".hand.hour-hand");
+// selects and assigns the element with class "hand min-hand".
+const min = document.querySelector(".hand.min-hand");
+// selects and assigns the element with class "hand second-hand".
+const sec = document.querySelector(".hand.second-hand");
 
 setInterval(() => {
-  let day = new Date(); // Create the variable day 
+  let day = new Date(); // Create the variable day
   let hour = day.getHours(); // Create the variable hour
   let minutes = day.getMinutes(); // Create the variable minutes
   let seconds = day.getSeconds(); // Create the variable seconds
 
-  let hrrotation = 30 * hour + 0.5 * minutes; // This line calculates the rotation angle for the hour hand.
-  let minrotation = 6 * minutes; // This line calculates the rotation angle for the minute hand.
-  let secrotation = 6 * seconds; // This line calculates the rotation angle for the second hand.
+  // This block calculates the rotation angle for the for the different times.
+  let hrrotation = 30 * hour + 0.5 * minutes;
+  let minrotation = 6 * minutes;
+  let secrotation = 6 * seconds;
 
-  hr.style.transform = `translate(-50%,-100%) rotate(${hrrotation}deg)`; // defines the CSS transformation for the hour hand (hr) in JavaScript.
-  min.style.transform = `translate(-50%,-100%) rotate(${minrotation}deg)`; // defines the CSS transformation for the minute hand (min) in JavaScript.
-  sec.style.transform = `translate(-50%,-85%) rotate(${secrotation}deg)`; // defines the CSS transformation for the second hand (sec  ) in JavaScript.
+  // Applies CSS transformations to position and rotate the clock hands.
+  hr.style.transform = `translate(-50%,-100%) rotate(${hrrotation}deg)`;
+  min.style.transform = `translate(-50%,-100%) rotate(${minrotation}deg)`;
+  sec.style.transform = `translate(-50%,-85%) rotate(${secrotation}deg)`;
 });
 
+// Get the current date as a string with two digits for the day and month
+const dateString = new Date().toLocaleDateString("de-CH", {
+  day: "2-digit",
+  month: "2-digit",
+});
 
-
-// Erhalte das aktuelle Datum als String mit zwei Ziffern für Tag und Monat
-const dateString = new Date().toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit' });
-
-// Extrahiere den Tag und den Monat
+// Extract the day and the month
 const day = dateString.substring(0, 2);
 const month = dateString.substring(3, 5);
 
-// Füge das bearbeitete Datum in das Dokument ein (mit Punkt zwischen Tag und Monat)
-document.querySelector(".clock").insertAdjacentHTML(
-  'beforeend',
-  `<div class="date-display">${day}.${month}</div>`
-);
+// Insert the edited date into the document (with a dot between the day and month)
+document
+  .querySelector(".clock")
+  .insertAdjacentHTML(
+    "beforeend",
+    `<div class = "date-display">${day}.${month}</div>`
+  );

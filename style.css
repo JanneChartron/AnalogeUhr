@@ -1,90 +1,100 @@
 /* Apply a reset to remove default margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /*Background 
-  body {
-    background-image: linear-gradient(-45deg, #337599, #adc8d6, #6620df, rgb(66, 66, 184), #000000 );
-    background-size: 400% 400%;
-    animation: gradient 18s ease infinite;
+/*Background */
+body {
+  background-image: linear-gradient(
+    -45deg,
+    #337599,
+    #adc8d6,
+    #6620df,
+    rgb(66, 66, 184),
+    #000000
+  );
+  background-size: 400% 400%;
+  animation: gradient 18s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
-  */
-  /* Style the body to be a flex container, centering its content vertically and horizontally */
-  body {
-    display: flex;
-    justify-content: center; /*Makes everything centered*/
-    align-items: center;/*Makes everything centered*/
-    min-height: 100vh;
-     /* Set background color */
+  100% {
+    background-position: 0% 50%;
   }
-  
-  /* Style the clock container */
-  .clock {
-    width: 20vw; /* Set width as a percentage of viewport width */
-    height: 20vw; /* Set height as a percentage of viewport width */
-    display: flex;
-    justify-content: center; /*Makes everything centered*/
-    align-items: center; /*Makes everything centered*/
-    background: url(clock.png); /* Set background image */
-    background-size: cover;
-  }
-  
-  /* Style for clock hands */
-  .hand.hour-hand,
-  .hand.min-hand.hand,
-  .hand.second-hand {
-    width: 0.6%; /* Set width as a percentage */
-    position: absolute;
-    top: 50%; /* Position at the vertical center */
-    left: 50%; /* Position at the horizontal center */
-    transform: translate(-50%, -100%); /* Adjust position using translate */
-    transform-origin: bottom; /* Set the rotation origin to the bottom */
-    z-index: 2; /* Set stacking order */
-    border-radius: 2em; /* Apply rounded corners */
-  }
-  
-  /* Style for the hour hand */
-  .hand.hour-hand {
-    height: 5vw; /* Set height as a percentage of viewport width */
-    background-color: #000000; /* Set background color */
-  }
-  
-  /* Style for the minute hand */
-  .hand.min-hand {
-    height: 6.5vw; /* Set height as a percentage of viewport width */
-    background-color: #000000; /* Set background color */
-  }
-  
-  /* Style for the second hand */
-  .hand.second-hand {
-    height: 8.5vw; /* Set height as a percentage of viewport width */
-    background-color: #ff0000; /* Set background color */
-    transform-origin: 50% 84%; /* Adjust rotation origin for the second hand */
-  }
-  
-  .date-display {
-    position: absolute;
-    top: 47.5%;
-    left: 55%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 1.2em;
-    color: rgb(0, 0, 0); /* Ändere die Schriftfarbe nach Bedarf */
-    border: 2px solid rgb(0, 0, 0); /* Ändere die Rahmenfarbe und -stärke nach Bedarf */
-    padding: 5px;
-  }
+}
+
+/* Style the body to be a flex container. */
+body {
+  display: flex;
+  justify-content: center; /*Makes everything centered*/
+  align-items: center; /*Makes everything centered*/
+  min-height: 100vh;
+  /* Set background color */
+}
+
+/* Style the clock container */
+.clock {
+  width: 20vw; /* Set width as a percentage of viewport width */
+  height: 20vw; /* Set height as a percentage of viewport width */
+  display: flex;
+  justify-content: center; /*Makes everything centered*/
+  align-items: center; /*Makes everything centered*/
+  background: url(clock.png); /* Set background image */
+  background-size: cover;
+}
+
+/* Common styles for clock hands */
+.hand.hour-hand,
+.hand.min-hand,
+.hand.second-hand {
+  width: 0.6%; /* Set width as a percentage */
+  position: absolute;
+  top: 50%; /* Position at the vertical center */
+  left: 50%; /* Position at the horizontal center */
+  transform: translate(-50%, -100%); /* Adjust position using translate */
+  transform-origin: bottom; /* Set the rotation origin to the bottom */
+  z-index: 2; /* Set stacking order */
+  border-radius: 1vw; /* Apply rounded corners */
+}
+
+/* Style for the hour hand */
+.hand.hour-hand {
+  height: 5vw; /* Set height as a percentage of viewport width */
+  background-color: rgb(82, 151, 151); /* Set background color */
+  border: 0.2vw solid black; /* Set border color and thickness */
+}
+
+/* Style for the minute hand */
+.hand.min-hand {
+  height: 6.5vw; /* Set height as a percentage of viewport width */
+  background-color: rgb(82, 151, 151); /* Set background color */
+  border: 0.2vw solid black; /* Set border color and thickness */
+}
+
+/* Style for the second hand */
+.hand.second-hand {
+  height: 8.5vw; /* Set height as a percentage of viewport width */
+  background-color: #ff0000; /* Set background color */
+  border: 0.23vw solid black; /* Set border color and thickness */
+  transform-origin: 50% 84%; /* Adjust rotation origin for the second hand */
+} 
+
+/*Start of the date display */
+.date-display {
+  position: absolute;
+  font-size: 1.3vw; /*Font size*/
+  color: rgb(0, 0, 0);
+  border: 0.2vw solid rgb(0, 0, 0);
+  padding: 0.3vw;
+  transform: translate(120%, -0%); /*Position*/
+  background-color: #b8d9ea9f; /*Background color*/
+  border-radius: 8px; 
+}
