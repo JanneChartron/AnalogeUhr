@@ -1,0 +1,60 @@
+/* Apply a reset to remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Style the body to be a flex container, centering its content vertically and horizontally */
+  body {
+    display: flex;
+    justify-content: center; /*Makes everything centered*/
+    align-items: center;/*Makes everything centered*/
+    min-height: 100vh;
+    background: #091921; /* Set background color */
+  }
+  
+  /* Style the clock container */
+  .clock {
+    width: 20vw; /* Set width as a percentage of viewport width */
+    height: 20vw; /* Set height as a percentage of viewport width */
+    display: flex;
+    justify-content: center; /*Makes everything centered*/
+    align-items: center; /*Makes everything centered*/
+    background: url(clock.png); /* Set background image */
+    background-size: cover;
+  }
+  
+  /* Style for clock hands */
+  .hand.hour-hand,
+  .hand.min-hand.hand,
+  .hand.second-hand {
+    width: 0.6%; /* Set width as a percentage */
+    position: absolute;
+    top: 50%; /* Position at the vertical center */
+    left: 50%; /* Position at the horizontal center */
+    transform: translate(-50%, -100%); /* Adjust position using translate */
+    transform-origin: bottom; /* Set the rotation origin to the bottom */
+    z-index: 2; /* Set stacking order */
+    border-radius: 2em; /* Apply rounded corners */
+  }
+  
+  /* Style for the hour hand */
+  .hand.hour-hand {
+    height: 5vw; /* Set height as a percentage of viewport width */
+    background-color: #000000; /* Set background color */
+  }
+  
+  /* Style for the minute hand */
+  .hand.min-hand {
+    height: 6.5vw; /* Set height as a percentage of viewport width */
+    background-color: #000000; /* Set background color */
+  }
+  
+  /* Style for the second hand */
+  .hand.second-hand {
+    height: 8.5vw; /* Set height as a percentage of viewport width */
+    background-color: #ff0000; /* Set background color */
+    transform-origin: 50% 84%; /* Adjust rotation origin for the second hand */
+  }
+  

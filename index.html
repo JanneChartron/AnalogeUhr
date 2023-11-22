@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="de-CH">
-  <head>
-    <meta name="author" content="Janne Chartron" />
-    <meta
-      name="description"
-      content="Analog clock with pointers for hour, minute and second moved by
-    javascript"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="AnalogeUhr.css" />
-    <title>Analoge Uhr</title>
-  </head>
 
-  <!-- START clock element with all utilities -->
-  <div class="clock">
-    <div class="outer-clock-face">
-      <div class="marking marking-one"></div>
-      <div class="marking marking-two"></div>
-      <div class="marking marking-three"></div>
-      <div class="marking marking-four"></div>
-      <div class="inner-clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+<head>
+  <!-- Meta tags for document information -->
+  <meta name="author" content="Janne Chartron" />
+  <meta name="description" content="Analog clock with pointers for hour, minute and second moved by
+    javascript" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to the external stylesheet for styling -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Title of the document -->
+  <title>Analoge Uhr</title>
+</head>
+
+<!-- Body of the HTML document -->
+<!-- START clock element with all utilities -->
+<div class="clock">
+  <!-- Outer clock face with hour markings -->
+  <div class="outer-clock-face">
+    <!-- Markings for hours on the outer clock face -->
+    <div class="marking marking-one"></div>
+    <div class="marking marking-two"></div>
+    <div class="marking marking-three"></div>
+    <div class="marking marking-four"></div>
+    <!-- Inner clock face containing hour, minute, and second hands -->
+    <div class="inner-clock-face">
+      <!-- Hour hand element -->
+      <div class="hand hour-hand"></div>
+      <!-- Minute hand element -->
+      <div class="hand min-hand"></div>
+      <!-- Second hand element -->
+      <div class="hand second-hand"></div>
     </div>
   </div>
-  <!-- END clock element -->
+</div>
+<!-- END clock element -->
+<!-- Include the JavaScript file for clock functionality -->
+<script src="analogClock.js"></script>
 
-  <script src="AnalogeUhr.js"></script>
 </html>
