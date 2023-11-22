@@ -1,23 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #091921;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .clock {
-    width: 20vw;
-    height: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(clock.png);
-    background-size: cover;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #091921;
+}
+
+.clock {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(clock.png);
+  background-size: cover;
+}
+
+.hand.hour-hand,
+.hand.min-hand.hand,
+.hand.second-hand {
+  width: 0.6%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom;
+  z-index: 2;
+  border-radius: 2em;
+}
+
+.hand.hour-hand {
+  height: 5vw;
+  background-color: #000000;
+}
+
+.hand.min-hand {
+  height: 6.5vw;
+  background-color: #000000;
+}
+
+.hand.second-hand {
+  height: 8.5vw;
+  background-color: #ff0000;
+  transform-origin: 50% 84%;
+}
