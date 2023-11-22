@@ -32,10 +32,14 @@ const dateString = new Date().toLocaleDateString("de-CH", {
 const day = dateString.substring(0, 2);
 const month = dateString.substring(3, 5);
 
-// Insert the edited date into the document (with a dot between the day and month)
+// Insert the edited date into the document
 document
   .querySelector(".clock")
   .insertAdjacentHTML(
     "beforeend",
     `<div class = "date-display">${day}.${month}</div>`
   );
+
+  hr.style.transition = "transform 1s ease";
+  min.style.transition = "transform 1s ease";
+  sec.style.transition = "transform 1.01s linear";
